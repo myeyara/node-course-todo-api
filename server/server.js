@@ -26,3 +26,6 @@ app.post('/todos', (req, res) => {
 app.listen(3000, () => {
   console.log('Server up and runing - listen to port 3000');
 })
+
+//damit sich die Anwendung zum Testen imortieren lässt
+module.exports = {app};
