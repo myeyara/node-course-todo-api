@@ -23,6 +23,16 @@ app.post('/todos', (req, res) => {
   })
 });
 
+app.get('/todos', (req, res) => {
+  Todo.find().then(
+    (todos) => {
+      res.status(200).send({todos}); // als Objekt lassen sich neben den Todos weitere Infos übergeben
+    },
+    (e) => {
+      res.status(400).send(e);
+    });
+});
+
 app.listen(3000, () => {
   console.log('Server up and runing - listen to port 3000');
 })
